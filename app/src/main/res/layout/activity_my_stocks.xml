@@ -15,6 +15,7 @@
   <com.melnykov.fab.FloatingActionButton
       android:id="@+id/fab"
       android:layout_width="wrap_content"
+      android:contentDescription="@string/fab_content_description"
       android:layout_height="wrap_content"
       android:layout_gravity="bottom|right"
       android:layout_margin="16dp"

@@ -60,6 +60,8 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     private Cursor mCursor;
     @BindView(R.id.recycler_view)
     private RecyclerView recyclerView;
+    @BindView(R.id.fab)
+    FloatingActionButton fab;
 
     private static final String[] QUOTE_COLUMNS = {
             QuoteColumns._ID,
@@ -105,7 +107,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     }
 
     public void setupFloatingActionButton(){
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
         fab.attachToRecyclerView(recyclerView);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

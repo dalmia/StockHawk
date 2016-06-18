@@ -1,0 +1,15 @@
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">الأسهم هوك</string>
+    <string name="action_settings">إعدادات</string>
+    <string name="action_change_units">وحدات التغيير</string>
+    <string name="symbol_search">رمز البحث</string>
+    <string name="content_test">البحث عن رمز السهم</string>
+    <string name="input_hint">مثال. YHOO</string>
+    <string name="stock_empty">الأسهم لا تضاف</string>
+    <string name="network_toast">اه اوه! هذا التطبيق يتطلب اتصال بالإنترنت</string>
+    <string name="stock_already_saved">يتم حفظ هذا المخزون فعلا!</string>
+    <string name="a11y_stock_symbol">مخزون : <xliff:g id="symbol">%1$s</xliff:g></string>
+    <string name="a11y_price">السعر : <xliff:g id="value">%1$s</xliff:g></string>
+    <string name="a11y_change">تغيير : <xliff:g id="value">%1$s</xliff:g></string>
+    <string name="fab_content_description">بحث عن الأسهم</string>
+</resources>
