@@ -12,5 +12,6 @@
     <string name="a11y_price">Price : <xliff:g id="value">%1$s</xliff:g></string>
     <string name="a11y_change">Change : <xliff:g id="value">%1$s</xliff:g></string>
     <string name="fab_content_description">Search for a Stock</string>
+    <string name="no_stock_found">No Stock with this Symbol exists</string>
 
 </resources>

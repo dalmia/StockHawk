@@ -59,7 +59,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     private Context mContext;
     private Cursor mCursor;
     @BindView(R.id.recycler_view)
-    private RecyclerView recyclerView;
+    RecyclerView recyclerView;
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
@@ -81,9 +81,9 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ButterKnife.bind(this);
         mContext = this;
         setContentView(R.layout.activity_my_stocks);
+        ButterKnife.bind(this);
         // The intent service is for executing immediate pulls from the Yahoo API
         // GCMTaskService can only schedule tasks, they cannot execute immediately
         mServiceIntent = new Intent(this, StockIntentService.class);

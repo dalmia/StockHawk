@@ -38,7 +38,7 @@
         <service android:name="com.passenger.android.stockhawk.service.StockIntentService" />
         <provider
             android:authorities="com.passenger.android.stockhawk.data.QuoteProvider"
-            android:name="com.passenger.android.stockhawk.data.QuoteProvider"
+            android:name="com.passenger.android.stockhawk.data.generated.QuoteProvider"
             android:exported="false"/>
     </application>
 
