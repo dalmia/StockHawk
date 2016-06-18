@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.ui;
+package com.passenger.android.stockhawk.ui;
 
 import android.app.LoaderManager;
 import android.content.Context;
@@ -24,20 +24,20 @@ import com.google.android.gms.gcm.GcmNetworkManager;
 import com.google.android.gms.gcm.PeriodicTask;
 import com.google.android.gms.gcm.Task;
 import com.melnykov.fab.FloatingActionButton;
-import com.sam_chordas.android.stockhawk.R;
-import com.sam_chordas.android.stockhawk.adapters.QuoteCursorAdapter;
-import com.sam_chordas.android.stockhawk.callbacks.SimpleItemTouchHelperCallback;
-import com.sam_chordas.android.stockhawk.data.QuoteColumns;
-import com.sam_chordas.android.stockhawk.data.QuoteProvider;
-import com.sam_chordas.android.stockhawk.helper.RecyclerViewItemClickListener;
-import com.sam_chordas.android.stockhawk.service.StockIntentService;
-import com.sam_chordas.android.stockhawk.service.StockTaskService;
-import com.sam_chordas.android.stockhawk.utils.Utility;
+import com.passenger.android.stockhawk.R;
+import com.passenger.android.stockhawk.adapters.QuoteCursorAdapter;
+import com.passenger.android.stockhawk.callbacks.SimpleItemTouchHelperCallback;
+import com.passenger.android.stockhawk.data.QuoteColumns;
+import com.passenger.android.stockhawk.data.QuoteProvider;
+import com.passenger.android.stockhawk.helper.RecyclerViewItemClickListener;
+import com.passenger.android.stockhawk.service.StockIntentService;
+import com.passenger.android.stockhawk.service.StockTaskService;
+import com.passenger.android.stockhawk.utils.Utility;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.sam_chordas.android.stockhawk.utils.Utility.isConnected;
+import static com.passenger.android.stockhawk.utils.Utility.isConnected;
 
 public class MyStocksActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 

@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.service;
+package com.passenger.android.stockhawk.service;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -11,9 +11,9 @@ import android.util.Log;
 import com.google.android.gms.gcm.GcmNetworkManager;
 import com.google.android.gms.gcm.GcmTaskService;
 import com.google.android.gms.gcm.TaskParams;
-import com.sam_chordas.android.stockhawk.data.QuoteColumns;
-import com.sam_chordas.android.stockhawk.data.QuoteProvider;
-import com.sam_chordas.android.stockhawk.utils.Utility;
+import com.passenger.android.stockhawk.data.QuoteColumns;
+import com.passenger.android.stockhawk.data.QuoteProvider;
+import com.passenger.android.stockhawk.utils.Utility;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -22,10 +22,10 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 
-import static com.sam_chordas.android.stockhawk.ui.MyStocksActivity.INTENT_ADD;
-import static com.sam_chordas.android.stockhawk.ui.MyStocksActivity.INTENT_INIT;
-import static com.sam_chordas.android.stockhawk.ui.MyStocksActivity.INTENT_PERIODIC;
-import static com.sam_chordas.android.stockhawk.ui.MyStocksActivity.INTENT_SYMBOL;
+import static com.passenger.android.stockhawk.ui.MyStocksActivity.INTENT_ADD;
+import static com.passenger.android.stockhawk.ui.MyStocksActivity.INTENT_INIT;
+import static com.passenger.android.stockhawk.ui.MyStocksActivity.INTENT_PERIODIC;
+import static com.passenger.android.stockhawk.ui.MyStocksActivity.INTENT_SYMBOL;
 
 /**
  * Created by sam_chordas on 9/30/15.

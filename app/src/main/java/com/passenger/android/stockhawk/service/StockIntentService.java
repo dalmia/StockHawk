@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.service;
+package com.passenger.android.stockhawk.service;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.google.android.gms.gcm.TaskParams;
-import com.sam_chordas.android.stockhawk.ui.MyStocksActivity;
+import com.passenger.android.stockhawk.ui.MyStocksActivity;
 
-import static com.sam_chordas.android.stockhawk.ui.MyStocksActivity.INTENT_SYMBOL;
+import static com.passenger.android.stockhawk.ui.MyStocksActivity.INTENT_SYMBOL;
 
 /**
  * Created by sam_chordas on 10/1/15.

@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.interfaces;
+package com.passenger.android.stockhawk.interfaces;
 
 /**
  * Created by sam_chordas on 10/6/15.

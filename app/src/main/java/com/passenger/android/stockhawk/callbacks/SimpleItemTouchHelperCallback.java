@@ -1,10 +1,10 @@
-package com.sam_chordas.android.stockhawk.callbacks;
+package com.passenger.android.stockhawk.callbacks;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
-import com.sam_chordas.android.stockhawk.interfaces.ItemTouchHelperAdapter;
-import com.sam_chordas.android.stockhawk.interfaces.ItemTouchHelperViewHolder;
+import com.passenger.android.stockhawk.interfaces.ItemTouchHelperAdapter;
+import com.passenger.android.stockhawk.interfaces.ItemTouchHelperViewHolder;
 
 /**
  * Created by sam_chordas on 10/6/15.

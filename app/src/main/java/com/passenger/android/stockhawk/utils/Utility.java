@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.utils;
+package com.passenger.android.stockhawk.utils;
 
 import android.content.ContentProviderOperation;
 import android.content.Context;
@@ -6,8 +6,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-import com.sam_chordas.android.stockhawk.data.QuoteColumns;
-import com.sam_chordas.android.stockhawk.data.QuoteProvider;
+import com.passenger.android.stockhawk.data.QuoteColumns;
+import com.passenger.android.stockhawk.data.QuoteProvider;
 
 import org.json.JSONArray;
 import org.json.JSONException;
