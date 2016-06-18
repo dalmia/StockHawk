@@ -38,7 +38,7 @@
         <service android:name="com.sam_chordas.android.stockhawk.service.StockIntentService" />
         <provider
             android:authorities="com.sam_chordas.android.stockhawk.data.QuoteProvider"
-            android:name="com.sam_chordas.android.stockhawk.data.generated.QuoteProvider"
+            android:name="com.sam_chordas.android.stockhawk.data.QuoteProvider"
             android:exported="false"/>
     </application>
 

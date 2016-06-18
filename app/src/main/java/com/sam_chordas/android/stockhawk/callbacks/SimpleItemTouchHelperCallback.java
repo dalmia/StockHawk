@@ -1,7 +1,10 @@
-package com.sam_chordas.android.stockhawk.touch_helper;
+package com.sam_chordas.android.stockhawk.callbacks;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
+
+import com.sam_chordas.android.stockhawk.interfaces.ItemTouchHelperAdapter;
+import com.sam_chordas.android.stockhawk.interfaces.ItemTouchHelperViewHolder;
 
 /**
  * Created by sam_chordas on 10/6/15.
@@ -9,11 +12,11 @@ import android.support.v7.widget.helper.ItemTouchHelper;
  * this class enables swipe to delete in RecyclerView
  */
 public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback{
-  private final ItemTouchHelperAdapter mAdapter;
+  private final ItemTouchHelperAdapter mAdapterHelper;
   public static final float ALPHA_FULL = 1.0f;
 
-  public SimpleItemTouchHelperCallback(ItemTouchHelperAdapter adapter){
-    mAdapter = adapter;
+  public SimpleItemTouchHelperCallback(ItemTouchHelperAdapter adapterHelper){
+    mAdapterHelper = adapterHelper;
   }
 
   @Override
@@ -35,7 +38,7 @@ public class SimpleItemTouchHelperCallback extends ItemTouchHelper.Callback{
 
   @Override
   public void onSwiped(RecyclerView.ViewHolder viewHolder, int i){
-    mAdapter.onItemDismiss(viewHolder.getAdapterPosition());
+    mAdapterHelper.onItemDismiss(viewHolder.getAdapterPosition());
   }
 
 

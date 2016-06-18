@@ -1,4 +1,4 @@
-package com.sam_chordas.android.stockhawk.rest;
+package com.sam_chordas.android.stockhawk.adapters;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -14,8 +14,9 @@ import android.widget.TextView;
 import com.sam_chordas.android.stockhawk.R;
 import com.sam_chordas.android.stockhawk.data.QuoteColumns;
 import com.sam_chordas.android.stockhawk.data.QuoteProvider;
-import com.sam_chordas.android.stockhawk.touch_helper.ItemTouchHelperAdapter;
-import com.sam_chordas.android.stockhawk.touch_helper.ItemTouchHelperViewHolder;
+import com.sam_chordas.android.stockhawk.interfaces.ItemTouchHelperAdapter;
+import com.sam_chordas.android.stockhawk.interfaces.ItemTouchHelperViewHolder;
+import com.sam_chordas.android.stockhawk.utils.Utility;
 
 /**
  * Created by sam_chordas on 10/6/15.
@@ -65,7 +66,7 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
             mContext.getResources().getDrawable(R.drawable.percent_change_pill_red));
       }
     }
-    if (Utils.showPercent){
+    if (Utility.showPercent){
       viewHolder.change.setText(cursor.getString(cursor.getColumnIndex("percent_change")));
     } else{
       viewHolder.change.setText(cursor.getString(cursor.getColumnIndex("change")));
