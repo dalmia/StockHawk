@@ -3,6 +3,7 @@ package com.passenger.android.stockhawk.widget;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Binder;
+import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
@@ -40,9 +41,10 @@ public class StockRemoteViewsService extends RemoteViewsService {
                 final long identityToken = Binder.clearCallingIdentity();
                 data = getContentResolver().query(QuoteProvider.Quotes.CONTENT_URI,
                         MyStocksActivity.QUOTE_COLUMNS,
-                        null,
-                        null,
+                        QuoteColumns.ISCURRENT + " = ?",
+                        new String[]{"1"},
                         null);
+                Log.d("Count", String.valueOf(data.getCount()));
                 Binder.restoreCallingIdentity(identityToken);
             }
 
@@ -72,12 +74,12 @@ public class StockRemoteViewsService extends RemoteViewsService {
                 remoteViews.setTextViewText(R.id.stock_symbol, data.getString(COL_SYMBOL));
                 remoteViews.setTextViewText(R.id.change, data.getString(COL_CHANGE));
                 remoteViews.setTextViewText(R.id.bid_price, data.getString(COL_BID_PRICE));
-                if(data.getString(COL_IS_UP) == "1"){
-                    remoteViews.setInt(R.id.change, "setBackgroundResource",
-                            R.drawable.percent_change_pill_green);
-                }else{
+                if(data.getInt(COL_IS_UP) == 0){
                     remoteViews.setInt(R.id.change, "setBackgroundResource",
                             R.drawable.percent_change_pill_red);
+                }else{
+                    remoteViews.setInt(R.id.change, "setBackgroundResource",
+                            R.drawable.percent_change_pill_green);
                 }
                 return remoteViews;
             }

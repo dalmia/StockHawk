@@ -2,7 +2,6 @@ package com.passenger.android.stockhawk.service;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.content.OperationApplicationException;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
@@ -16,7 +15,6 @@ import com.google.android.gms.gcm.TaskParams;
 import com.passenger.android.stockhawk.R;
 import com.passenger.android.stockhawk.data.QuoteColumns;
 import com.passenger.android.stockhawk.data.QuoteProvider;
-import com.passenger.android.stockhawk.ui.MyStocksActivity;
 import com.passenger.android.stockhawk.utils.Utility;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -164,10 +162,6 @@ public class StockTaskService extends GcmTaskService {
                     } else {
                         mContext.getContentResolver().applyBatch(QuoteProvider.AUTHORITY,
                                 Utility.quoteJsonToContentVals(getResponse));
-                        Context context = getApplicationContext();
-                        Intent intent = new Intent(MyStocksActivity.STOCK_UPDATED)
-                                .setPackage(getPackageName());
-                        context.sendBroadcast(intent);
                     }
                 } catch (RemoteException | OperationApplicationException e) {
                     Log.e(TAG, "Error applying batch insert", e);
