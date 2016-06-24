@@ -59,6 +59,7 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
         holder.symbol.setText(cursor.getString(COL_SYMBOL));
         holder.symbol.setContentDescription(mContext.getString(R.string.a11y_stock_symbol,
                 holder.symbol.getText()));
+        holder.itemView.setTag(cursor.getString(COL_SYMBOL));
         holder.bidPrice.setText(cursor.getString(COL_BID_PRICE));
         holder.bidPrice.setContentDescription(mContext.getString(R.string.a11y_price,
                 holder.bidPrice.getText()));
