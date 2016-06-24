@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,6 +18,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -58,10 +60,13 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     private QuoteCursorAdapter mCursorAdapter;
     private Context mContext;
     private Cursor mCursor;
+    @BindView(R.id.empty_list_textview)
+    TextView emptyView;
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
     @BindView(R.id.fab)
     FloatingActionButton fab;
+
 
     private static final String[] QUOTE_COLUMNS = {
             QuoteColumns._ID,
@@ -93,7 +98,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
             if (isConnected(this)) {
                 startService(mServiceIntent);
             } else {
-                showToast();
+                showSnack();
             }
         }
 
@@ -143,7 +148,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                             })
                             .show();
                 } else {
-                    showToast();
+                    showSnack();
                 }
 
             }
@@ -158,7 +163,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
 
     public void setupRecyclerView(){
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mCursorAdapter = new QuoteCursorAdapter(this, null);
+        mCursorAdapter = new QuoteCursorAdapter(this, null, emptyView);
         recyclerView.addOnItemTouchListener(new RecyclerViewItemClickListener(this,
                 new RecyclerViewItemClickListener.OnItemClickListener() {
                     @Override
@@ -197,8 +202,24 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
         getLoaderManager().restartLoader(CURSOR_LOADER_ID, null, this);
     }
 
-    public void showToast() {
-        Toast.makeText(mContext, getString(R.string.network_toast), Toast.LENGTH_SHORT).show();
+    public void showSnack() {
+        Snackbar snackbar = Snackbar
+                .make(findViewById(android.R.id.content), getString(R.string.no_internet_connection), Snackbar.LENGTH_INDEFINITE)
+                .setAction(getString(R.string.check_internet_connection), new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        try{
+                            if(!isConnected(MyStocksActivity.this)){
+                                showSnack();
+                            }else{
+                                onRefresh();
+                            }
+
+                        }catch(Exception e){
+
+                        }}
+                });
+        snackbar.show();
     }
 
     public void restoreActionBar() {
@@ -247,10 +268,23 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                 null);
     }
 
+
+    public void onRefresh(){
+        mServiceIntent.putExtra("tag", "periodic");
+        if (isConnected(this)){
+            startService(mServiceIntent);
+        } else{
+            showSnack();
+        }
+    }
+    
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         mCursorAdapter.swapCursor(data);
         mCursor = data;
+        if(data!=null){
+            emptyView.setVisibility(data.getCount() == 0 ? View.VISIBLE : View.GONE);
+        }
     }
 
     @Override

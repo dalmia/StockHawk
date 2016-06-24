@@ -43,10 +43,10 @@ public class StockTaskService extends GcmTaskService {
     public static final String QUERY = "query";
     public static final String RESULTS = "results";
     public static final String QUOTE = "quote";
-    public static final String BID = "bid";
+    public static final String BID = "Bid";
     public static final String SYMBOL = "symbol";
     public static final String CHANGE_IN_PERCENT = "ChangeinPercent";
-    public static final String CHANGE = "change";
+    public static final String CHANGE = "Change";
     public static final String COUNT = "count";
 
     private OkHttpClient client = new OkHttpClient();
