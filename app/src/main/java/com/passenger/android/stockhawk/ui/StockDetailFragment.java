@@ -32,21 +32,6 @@ public class StockDetailFragment extends Fragment implements
     public StockDetailFragment() {
     }
 
-    private final String[] QUOTE_COLUMNS = {
-            QuoteColumns._ID,
-            QuoteColumns.SYMBOL,
-            QuoteColumns.BIDPRICE,
-            QuoteColumns.PERCENT_CHANGE,
-            QuoteColumns.CHANGE,
-            QuoteColumns.ISUP
-    };
-
-    private final int COL_SYMBOL = 1;
-    private final int COL_BID_PRICE = 1;
-    private final int COL_PERCENT_CHANGE = 1;
-    private final int COL_CHANGE = 1;
-    private final int COL_IS_UP = 1;
-
     public static final String STOCK_SYMBOL = "symbol";
     private static final int STOCK_DETAIL_LOADER_ID = 1;
 
@@ -80,7 +65,7 @@ public class StockDetailFragment extends Fragment implements
                 case STOCK_DETAIL_LOADER_ID:
                     return new CursorLoader(getActivity(),
                             QuoteProvider.Quotes.CONTENT_URI,
-                            QUOTE_COLUMNS,
+                            MyStocksActivity.QUOTE_COLUMNS,
                             QuoteColumns.SYMBOL + " = ?",
                             new String[]{currency},
                             null);
@@ -105,7 +90,7 @@ public class StockDetailFragment extends Fragment implements
         float maximumPrice = Float.MIN_VALUE;
 
         for (data.moveToFirst(); !data.isAfterLast(); data.moveToNext()) {
-            String label = data.getString(COL_BID_PRICE);
+            String label = data.getString(MyStocksActivity.COL_BID_PRICE);
             float price = Float.parseFloat(label);
 
             lineSet.addPoint(label, price);

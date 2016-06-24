@@ -43,6 +43,7 @@ import static com.passenger.android.stockhawk.utils.Utility.isConnected;
 
 public class MyStocksActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
+    public static final String STOCK_UPDATED = "com.passenger.android.stockhawk.STOCK_UPDATED";
     public static final String TAG = MyStocksActivity.class.getSimpleName();
     public static final String INTENT_TAG = "tag";
     public static final String INTENT_SYMBOL = "symbol";
@@ -67,8 +68,7 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
     @BindView(R.id.fab)
     FloatingActionButton fab;
 
-
-    private static final String[] QUOTE_COLUMNS = {
+    public static final String[] QUOTE_COLUMNS = {
             QuoteColumns._ID,
             QuoteColumns.SYMBOL,
             QuoteColumns.BIDPRICE,
