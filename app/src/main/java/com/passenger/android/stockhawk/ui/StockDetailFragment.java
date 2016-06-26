@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
@@ -114,8 +115,20 @@ public class StockDetailFragment extends Fragment implements
                 .setAxisBorderValues(Math.round(Math.max(0f, minimumPrice - 5f)), Math.round(maximumPrice + 5f))
                 .addData(lineSet);
 
-        Animation anim = new Animation();
-        lineChartView.show(anim);
+        if(lineSet.size() > 0) {
+            Animation anim = new Animation();
+            lineChartView.show(anim);
+        }else {
+            if (getView() != null) {
+                Snackbar snackbar = Snackbar
+                        .make(getView().findViewById(android.R.id.content),
+                                R.string.no_stock_data, Snackbar.LENGTH_INDEFINITE);
+                snackbar.show();
+            }else{
+                Toast.makeText(getActivity(), getString(R.string.no_stock_data),
+                        Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     @Override

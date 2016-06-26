@@ -30,6 +30,7 @@
 
     <TextView
         android:id="@+id/empty_list_textview"
+        android:contentDescription="@string/no_stock_added"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
