@@ -5,11 +5,15 @@
     <string name="symbol_search">رمز البحث</string>
     <string name="content_test">البحث عن رمز السهم</string>
     <string name="input_hint">مثال. YHOO</string>
-    <string name="stock_empty">الأسهم لا تضاف</string>
     <string name="network_toast">اه اوه! هذا التطبيق يتطلب اتصال بالإنترنت</string>
     <string name="stock_already_saved">يتم حفظ هذا المخزون فعلا!</string>
     <string name="a11y_stock_symbol">مخزون : <xliff:g id="symbol">%1$s</xliff:g></string>
     <string name="a11y_price">السعر : <xliff:g id="value">%1$s</xliff:g></string>
     <string name="a11y_change">تغيير : <xliff:g id="value">%1$s</xliff:g></string>
     <string name="fab_content_description">بحث عن الأسهم</string>
+    <string name="no_stock_found">لا يوجد مخزون مع هذا الرمز موجود</string>
+    <string name="no_internet_connection">تحقق من اتصال الإنترنت الخاص بك</string>
+    <string name="no_stock_added">قائمة الأسهم فارغ</string>
+    <string name="check_internet_connection">إعادة المحاولة</string>
+    <string name="no_stock_data">لا توجد بيانات الأسهم المتاحة</string>
 </resources>
