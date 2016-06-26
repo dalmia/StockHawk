@@ -26,6 +26,9 @@ import com.passenger.android.stockhawk.data.QuoteColumns;
 import com.passenger.android.stockhawk.data.QuoteProvider;
 
 
+/**
+ * Fragment that loads up the data of the stock over the years
+ */
 public class StockDetailFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -80,12 +83,12 @@ public class StockDetailFragment extends Fragment implements
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
         if (data.getCount() != 0)
-            renderChart(data);
+            makeChart(data);
         else
             Toast.makeText(getActivity(), "No data", Toast.LENGTH_SHORT).show();
     }
 
-    public void renderChart(Cursor data) {
+    public void makeChart(Cursor data) {
         LineSet lineSet = new LineSet();
         float minimumPrice = Float.MAX_VALUE;
         float maximumPrice = Float.MIN_VALUE;
@@ -116,6 +119,7 @@ public class StockDetailFragment extends Fragment implements
                 .addData(lineSet);
 
         if(lineSet.size() > 0) {
+            //Setting the default animation
             Animation anim = new Animation();
             lineChartView.show(anim);
         }else {

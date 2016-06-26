@@ -19,7 +19,7 @@ import static com.passenger.android.stockhawk.ui.MyStocksActivity.COL_IS_UP;
 import static com.passenger.android.stockhawk.ui.MyStocksActivity.COL_SYMBOL;
 
 /**
- * Created by aman on 24/6/16.
+ * Adapter class for the stocks list shown in the widget
  */
 public class StockRemoteViewsService extends RemoteViewsService {
 

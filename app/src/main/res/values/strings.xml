@@ -1,19 +1,52 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- App name -->
     <string name="app_name">Stock Hawk</string>
+
+    <!-- Title of the Settings Action in the menu -->
     <string name="action_settings">Settings</string>
+
+    <!-- Title of the Change Units Action in the menu -->
     <string name="action_change_units">Change Units</string>
+
+    <!-- Title of the Dialog Box for Adding a Stock -->
     <string name="symbol_search">Symbol Search</string>
+
+    <!-- Add Stock Dialog Box Content -->
     <string name="content_test">Search for a Stock Symbol</string>
+
+    <!--  Add Stock Dialog Box Hint -->
     <string name="input_hint">eg. YHOO</string>
+
+    <!-- Add Stock Default value set -->
     <string name="input_prefill" translatable="false"></string>
+
+    <!-- Text to display while adding a stock already saved -->
     <string name="stock_already_saved">This stock is already saved!</string>
+
+    <!-- Format for setting the content description on the symbol textView -->
     <string name="a11y_stock_symbol">Stock : <xliff:g id="symbol">%1$s</xliff:g></string>
+
+    <!-- Format for setting the content description on the price textView -->
     <string name="a11y_price">Price : <xliff:g id="value">%1$s</xliff:g></string>
+
+    <!-- Format for setting the content description on the change textView -->
     <string name="a11y_change">Change : <xliff:g id="value">%1$s</xliff:g></string>
+
+    <!-- Format for setting the content description on the floating action button to add a stock -->
     <string name="fab_content_description">Add a new stock</string>
+
+    <!-- Display Text when the search result for a stock returns empty -->
     <string name="no_stock_found">No Stock with this Symbol exists</string>
+
+    <!-- SnackBar text when no internet connection found -->
     <string name="no_internet_connection">Check your internet connection</string>
+
+    <!-- Display Text when no internet connection found -->
     <string name="no_stock_added">Stock List Empty</string>
+
+    <!-- Action text to retry fetching data when no internet connection found -->
     <string name="check_internet_connection">Retry</string>
+
+    <!-- Display SnackBar text when no stock data found in StockDetailFragment -->
     <string name="no_stock_data">No stock data available</string>
 </resources>

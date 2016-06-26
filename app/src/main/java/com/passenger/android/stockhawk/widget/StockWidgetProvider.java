@@ -12,7 +12,7 @@ import com.passenger.android.stockhawk.R;
 import com.passenger.android.stockhawk.ui.MyStocksActivity;
 
 /**
- * Created by aman on 24/6/16.
+ * Instance of the AppWidgetProvider class for the StockHawk Widget
  */
 public class StockWidgetProvider extends AppWidgetProvider {
 

@@ -115,6 +115,11 @@ public class Utility {
         return builder.build();
     }
 
+    /**
+     * Helper function to check for internet connection
+     * @param context context of the calling activity
+     * @return boolean which is true when internet connection is present
+     */
     public static boolean isConnected(Context context) {
         ConnectivityManager cm =
                 (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);

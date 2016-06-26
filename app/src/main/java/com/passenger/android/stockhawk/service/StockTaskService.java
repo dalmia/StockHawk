@@ -6,7 +6,6 @@ import android.content.OperationApplicationException;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.os.RemoteException;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.gcm.GcmNetworkManager;
@@ -38,7 +37,6 @@ import static com.passenger.android.stockhawk.ui.MyStocksActivity.INTENT_SYMBOL;
  * and is used for the initialization and adding task as well.
  */
 public class StockTaskService extends GcmTaskService {
-    private String TAG = StockTaskService.class.getSimpleName();
 
     public static final String QUERY = "query";
     public static final String RESULTS = "results";
@@ -134,9 +132,7 @@ public class StockTaskService extends GcmTaskService {
         if (urlStringBuilder != null) {
             urlString = urlStringBuilder.toString();
             try {
-                Log.d(TAG, urlString);
                 getResponse = fetchData(urlString);
-                Log.d(TAG, getResponse);
                 result = GcmNetworkManager.RESULT_SUCCESS;
                 try {
                     ContentValues contentValues = new ContentValues();
@@ -164,7 +160,7 @@ public class StockTaskService extends GcmTaskService {
                                 Utility.quoteJsonToContentVals(getResponse));
                     }
                 } catch (RemoteException | OperationApplicationException e) {
-                    Log.e(TAG, "Error applying batch insert", e);
+                    e.printStackTrace();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
