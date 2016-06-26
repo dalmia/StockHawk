@@ -26,13 +26,14 @@
         fab:layout_anchorGravity="bottom | end" />
 
     <TextView
-        android:gravity="center"
         android:id="@+id/empty_list_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="@color/empty_view_text_color"
+        android:contentDescription="@string/no_stock_added"
+        android:gravity="center"
         android:padding="@dimen/empty_view_padding"
+        android:text="@string/no_stock_added"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/no_stock_added" />
+        android:textColor="@color/empty_view_text_color" />
 </FrameLayout>

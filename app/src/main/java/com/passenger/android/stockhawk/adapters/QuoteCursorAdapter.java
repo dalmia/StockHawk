@@ -56,13 +56,22 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final Cursor cursor) {
-        holder.symbol.setText(cursor.getString(COL_SYMBOL));
+        String symbol = cursor.getString(COL_SYMBOL);
+        String bidPrice = cursor.getString(COL_BID_PRICE);
+        String change;
+        if (Utility.showPercent) {
+            change = cursor.getString(COL_PERCENT_CHANGE);
+        } else {
+            change = cursor.getString(COL_CHANGE);
+        }
+        holder.symbol.setText(symbol);
         holder.symbol.setContentDescription(mContext.getString(R.string.a11y_stock_symbol,
-                holder.symbol.getText()));
-        holder.itemView.setTag(cursor.getString(COL_SYMBOL));
-        holder.bidPrice.setText(cursor.getString(COL_BID_PRICE));
+                symbol));
+        holder.itemView.setTag(symbol);
+        holder.itemView.setContentDescription(symbol);
+        holder.bidPrice.setText(bidPrice);
         holder.bidPrice.setContentDescription(mContext.getString(R.string.a11y_price,
-                holder.bidPrice.getText()));
+                bidPrice));
 
         if (cursor.getInt(COL_IS_UP) == 1) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -82,14 +91,8 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
                         mContext.getResources().getDrawable(R.drawable.percent_change_pill_red));
             }
         }
-
-        if (Utility.showPercent) {
-            holder.change.setText(cursor.getString(COL_PERCENT_CHANGE));
-        } else {
-            holder.change.setText(cursor.getString(COL_CHANGE));
-        }
-        holder.change.setContentDescription(mContext.getString(R.string.a11y_change,
-                holder.change.getText()));
+        holder.change.setText(change);
+        holder.change.setContentDescription(mContext.getString(R.string.a11y_change, change));
     }
 
     @Override

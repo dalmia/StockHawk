@@ -10,7 +10,7 @@
     <string name="a11y_stock_symbol">Stock : <xliff:g id="symbol">%1$s</xliff:g></string>
     <string name="a11y_price">Price : <xliff:g id="value">%1$s</xliff:g></string>
     <string name="a11y_change">Change : <xliff:g id="value">%1$s</xliff:g></string>
-    <string name="fab_content_description">Search for a Stock</string>
+    <string name="fab_content_description">Add a new stock</string>
     <string name="no_stock_found">No Stock with this Symbol exists</string>
     <string name="no_internet_connection">Check your internet connection</string>
     <string name="no_stock_added">Stock List Empty</string>
